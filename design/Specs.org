@@ -1,0 +1,108 @@
+* Functionality
+  Motions will be a social-networking site where people share their
+  opinions and ideas and their friends can support their movements
+
+  - Allows user to create their movements -- their opinions for/against
+    something or another
+  - Friends/Associate can support the opinion and comment below the user's
+    movement
+  - Movements can be created anonymously or non-anonymously
+  - A movement created will be shared with the creator's friends -- the
+    creator can also specify a list of people to share it with
+  - Movements will be ranked based on supports/supports gained daily/
+    support gain rate/ etc...
+  - Everytime someone supports a movement (anonymousely, or named) his
+    associates/friends will also be exposed to the movement
+  - Users can view movements by rank -- locally, globally, or by search
+  - Users can view the most recent movements locally, globally, by friends
+  - Single & Group messaging system
+  - Ralley -- Date & time, place
+  - Associates functions -- list associates, add associates
+  - Personal messaging system
+
+  - Will login through facebook
+  - facebook api
+    
+** Difference from other sites
+   - Connect through ideas
+   - Searchable movements
+   - Revolves around opinions
+     
+* Security
+  - Prepared statements to avoid sql injection
+  - bcrypt
+
+* Database structure
+  - User Table
+    UserID - primary key
+    FirstName
+    Last Name
+    Email - unique
+    Gender
+    Location
+    
+  - Associates Table
+    UserID - foreign key
+    AssociateID - foreign key
+
+  - Movement Table
+    MovementID - primary key
+    CreatorID - foreign keay
+    Title 
+    Text
+    # of Supporters
+    PowerIndex (ranking measure)
+    date
+    
+  - Supporters Table
+    MovementID - foreign key
+    SupporterID - foreign key
+
+  - Comments Table
+    MovementID - foreign key
+    text
+    UserID
+    date
+
+  - Conversations Table
+    UserID1 - foreign key
+    UserID2 - foreign key
+
+  - Messages Table
+    UserID1 - foreign key
+    UserID2 - foreign key
+    text
+    date
+
+  - News Table
+    UserID - foreign key
+    RegarderID - foreign key
+    Text
+    Date
+
+  - FactionConnection Table
+    MovementID - foreign key
+    FactionID - foreign key
+
+  - Faction Table
+    FactionID - primary Key
+    MemberID - foreign key
+    PrivatePublic
+    LeaderID - foreign key
+    
+* Folder Layout
+** includes - contains the php template for which to use to display the page
+   ViewObject.php - the main page class, which every other object that handles
+                    the view of the website inherits from. These following
+                    objects will inherit from pages
+	      
+	      HtmlHeader.php - the html header handling meta data etc
+	      TopBar.php - header object
+	      LeftSideBar.php - left side bar object
+	      RightSideBar.php - right side bar object
+	      Content.php - the content page object
+	      Footer.php - the footer object
+	      
+   
+   
+   

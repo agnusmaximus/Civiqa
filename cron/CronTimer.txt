@@ -1,0 +1,4 @@
+MAILTO=agnusmaximus@gmail.com
+1 1 * * * /opt/local/bin/php -f ~/Sites/Movements/Cronjobs/RankMovements2.php > ~/Sites/Movements/Cronjobs/RankMovements.out
+1 1 * * *  /opt/local/bin/php -f ~/Sites/Movements/Cronjobs/UpdateMovementStats.php > ~/Sites/Movements/Cronjobs/UpdateMovementStats.out
+
