@@ -4,5 +4,5 @@
 	 */
 	DEFINE('DSN', 'mysql:dbname=Movements;host=127.0.0.1');
 	DEFINE('USERNAME', 'root');
-	DEFINE('PASSWORD', 'Siz25rCy6Lkq');
+	DEFINE('PASSWORD', '');
 ?>
